@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediFlow Ultimate | Professional Edition</title>
+    
+    <!-- Link to CSS in the css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- === AUTHENTICATION SCREEN === -->
+    <div id="auth-overlay">
+        
+        <!-- LOGIN CARD -->
+        <div class="auth-card" id="loginCard">
+            <div class="brand-logo"><i class="fa-solid fa-hospital-user"></i> MediFlow</div>
+            <h3>System Login</h3>
+            <form id="loginForm">
+                <input type="text" id="uName" placeholder="Username / ID" required>
+                <input type="password" id="uPass" placeholder="Password" required>
+                <button type="submit" class="btn-primary full">Login</button>
+            </form>
+            <p class="switch-text">New here? <a onclick="toggleAuth('register')">Create Account</a></p>
+            
+            <div class="role-hint">
+                <strong>Demo Logins:</strong><br>
+                Admin: admin / 1234<br>
+                Doctor: doctor / 1234<br>
+                Nurse: nurse / 1234<br>  <!-- Added Nurse -->
+                Reception: front / 1234<br>
+                Patient: patient / 1234
+            </div>
+            
+            <!-- Reset Button to fix data issues -->
+            <p class="reset-btn" onclick="hardReset()">⚠ Reset System Data</p>
+        </div>
+
+        <!-- REGISTER CARD -->
+        <div class="auth-card" id="registerCard" style="display:none;">
+            <div class="brand-logo"><i class="fa-solid fa-id-card"></i> Register</div>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Full Name" required>
+                <input type="text" id="regUser" placeholder="Choose Username" required>
+                <input type="password" id="regPass" placeholder="Choose Password" required>
+                
+                <label>Register As:</label>
+                <select id="regRole" onchange="checkVip(this.value)">
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="reception">Receptionist</option>
+                </select>
+
+                <!-- VIP Toggle -->
+                <div id="vipSection" style="margin: 10px 0; display:flex; align-items:center; gap:10px;">
+                    <input type="checkbox" id="regVip"> 
+                    <label for="regVip" style="color:#f59e0b; font-weight:bold; cursor:pointer;">
+                        <i class="fa-solid fa-crown"></i> Register as VIP?
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-success full">Sign Up</button>
+            </form>
+            <p class="switch-text">Already have an account? <a onclick="toggleAuth('login')">Login</a></p>
+        </div>
+    </div>
+
+    <!-- === MAIN APP === -->
+    <div id="app" style="display:none;">
+        
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand"><i class="fa-solid fa-heart-pulse"></i> MediFlow</div>
+            <div class="user-panel">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <h4 id="dispName">User</h4>
+                    <span id="dispRole">Role</span>
+                </div>
+            </div>
+            <ul class="menu" id="dynamicMenu"></ul>
+            <div class="logout" onclick="logout()"><i class="fa-solid fa-power-off"></i> Logout</div>
+        </aside>
+
+        <!-- CONTENT -->
+        <main>
+            <header>
+                <h2 id="pageTitle">Dashboard</h2>
+                <span id="sysDate"></span>
+            </header>
+            <div id="main-container" class="content-wrapper"></div>
+        </main>
+    </div>
+
+    <!-- === MODAL === -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Title</h3>
+                <span onclick="closeModal()">&times;</span>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Link to Javascript in the js folder -->
+    <script src="js/script.js"></script>
+</body>
+</html>
