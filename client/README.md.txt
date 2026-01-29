@@ -1,54 +1,84 @@
-# 🏥 MediFlow Ultimate - Hospital Management System
+# 🏥 MediFlow - Hospital Management System (Full Stack)
 
-**MediFlow** is a comprehensive, role-based Hospital Management Information System (HMIS) designed to streamline clinic operations. It features a Single Page Application (SPA) architecture with distinct portals for Admins, Doctors, Receptionists, and Patients.
+**MediFlow** is a complete Information System for hospitals, built with **Python (Django)**, **MySQL**, and a Modern Frontend. It manages Patients, Doctors, Appointments, and Billing efficiently.
 
-![Project Status](https://img.shields.io/badge/Status-Completed-success)
-![License](https://img.shields.io/badge/License-MIT-blue)
+![Status](https://img.shields.io/badge/Status-Complete-success)
+![Stack](https://img.shields.io/badge/Stack-Django_|_MySQL-blue)
 
-## 🚀 Live Demo
-**[Click Here to View the Live Project](https://AhadMahi-VS.github.io/MediFlow_Ultimate/)**
+---
 
-## ✨ Key Features
+## ⚡ How to Run (The Easy Way)
 
-### 1. 🛡️ Admin Portal (God View)
-*   **User Management:** Add/Ban staff (Doctors/Receptionists).
-*   **Audit Logs:** Track every login and system action for security.
-*   **Analytics:** View revenue, active doctors, and system health.
-*   **Content Mgmt:** Post notices and updates.
+We have included an **Automated Script** to set up everything for you.
 
-### 2. 👨‍⚕️ Doctor Portal (Care Focused)
-*   **EMR:** View Patient Medical History Timeline.
-*   **Telemedicine:** Accept appointment requests.
-*   **Prescriptions:** Digital Rx templates.
-*   **Availability:** Set consulting slots.
+### 1️⃣ Pre-requisites (Install these first)
+*   **[Download Python](https://www.python.org/downloads/)** (Make sure to check "Add to PATH" during installation).
+*   **[Download XAMPP](https://www.apachefriends.org/)** (For the MySQL Database).
 
-### 3. 👩‍💼 Receptionist Portal (Front Desk)
-*   **Global Search:** Quickly find patient records.
-*   **Billing:** Generate invoices and collect payments.
-*   **Queue Mgmt:** Handle walk-in patients.
-*   **Inquiries:** Manage web messages.
+### 2️⃣ Start the Database
+1.  Open **XAMPP Control Panel**.
+2.  Click **Start** next to **MySQL**.
+3.  Wait until it turns **Green**.
 
-### 4. 😷 Patient Portal (Self Service)
-*   **VIP Registration:** Special sign-up with Gold status.
-*   **Booking:** Step-by-step online appointment booking.
-*   **Lab Results:** View and download reports.
-*   **History:** Access full medical timeline.
+### 3️⃣ Run the Project
+1.  Download this repository (Click **Code** -> **Download ZIP** and unzip it).
+2.  Open the folder.
+3.  Double-click the file named **`RUN_ME.bat`**.
 
-## 🛠️ Technology Stack
-*   **Frontend:** HTML5, CSS3 (Custom Variables, Dark Mode)
-*   **Logic:** Vanilla JavaScript (ES6+)
-*   **Database:** LocalStorage (Persists data in browser)
-*   **Icons:** FontAwesome 6
+**That's it!** The script will automatically:
+*   Install required Python libraries.
+*   Connect to your Database.
+*   Start the Server.
+*   Open the Website in your browser.
 
-## 🔐 Login Credentials (Demo)
+---
+
+## 🔐 Login Credentials (Demo Accounts)
+
+Use these accounts to test different roles:
+
 | Role | Username | Password |
 | :--- | :--- | :--- |
-| **Admin** | `admin` | `1234` |
+| **System Admin** | `admin` | `1234` |
 | **Doctor** | `doctor` | `1234` |
-| **Reception** | `front` | `1234` |
+| **Nurse** | `nurse` | `1234` |
+| **Receptionist** | `front` | `1234` |
 | **Patient** | `patient` | `1234` |
 
-## 📦 How to Run Locally
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AhadMahi-VS/MediFlow_Ultimate.git
+---
+
+## 🛠️ Features Included
+
+### 1. 🛡️ Admin
+*   Manage Staff (Add/Remove Doctors & Nurses).
+*   View Workload Reports.
+*   Manage Departments.
+
+### 2. 👨‍⚕️ Doctor
+*   View Daily Schedule (with Patient Token Numbers).
+*   Prevent Overbooking (Conflict Detection).
+*   View Patient Records.
+
+### 3. 👩‍⚕️ Nurse
+*   Triage Dashboard.
+*   Update Patient Vitals.
+
+### 4. 👩‍💼 Receptionist
+*   Walk-in Booking.
+*   Global Patient Search.
+*   Billing & Invoicing.
+
+### 5. 😷 Patient
+*   Online Booking (with VIP option).
+*   View Medical History & Labs.
+*   Cancel/Reschedule Appointments.
+
+---
+
+## ⚠️ Troubleshooting
+*   **"MySQL Error":** Make sure XAMPP MySQL is running (Green).
+*   **"Python not found":** Make sure you installed Python and restarted your computer.
+*   **"Script closes immediately":** Right-click `RUN_ME.bat` and run as Administrator.
+
+---
+*Developed by Ahad,Mustafizur,Nishat,F.K.Murad.*
